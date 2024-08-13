@@ -4,7 +4,10 @@
   <%@user.offers.each do |offer| %>
   <div class="card-date-offer d-flex mb-3 p-3">
     <div class="d-flex justify-content-center align-items-center">
-      <img src="" alt="<%= offer.title %> photo">
+        <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, crop: :fill, alt: "#{offer.title} photo" %>
+      <% if offer.photos.count == 0 %>
+        <%= image_tag "", height: 300, width: 400, crop: :fill, alt: "No photo" %>
+      <% end %>
       <div class="d-flex flex-column">
         <h3><%= offer.title %></h3>
         <p><%= offer.description%></p>
