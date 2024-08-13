@@ -1,12 +1,160 @@
-.navbar-lewagon {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  background-color: #fef5e6;
+  padding: 10px 20px;
+  color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-logo img {
+  height: 50px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-search-group {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-search input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 25px;
+  flex: 1;
+  min-width: 0;
+}
+
+.navbar-search input[type="text"]:last-of-type {
+  margin-right: 0;
+}
+
+.navbar-search button {
+  padding: 8px 16px;
+  background-color: #f298a8;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.navbar-offer .offer-btn {
+  padding: 8px 16px;
+  background-color: #f298a8;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.navbar-offer .offer-btn:hover,
+.navbar-search button:hover {
+  background-color: #46B7F8;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fef5e6; /* Light yellow background */
+}
+.real-connections-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  background-color: #fef5e6;
+  position: relative;
+}
+/* Text content styling */
+.text-content {
+  max-width: 40%;
+  text-align: center;
+}
+h1 {
+  font-size: 48px;
+  color: #000000;
+}
+.highlight {
+  color: #f598a8; /* Pink color for "Real Connections" */
+}
+.description {
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0;
+}
+.cta-button {
+  background-color: #f598a8; /* Pink button */
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0px #00000022;
+  margin-top: 20px;
+}
+/* Image content styling */
+.image-content {
+  position: relative;
+  max-width: 50%;
+}
+.left-character, .right-character {
+  width: 45%;
+  position: absolute;
+}
+.left-character {
+  left: 0;
+  bottom: 0;
+}
+.right-character {
+  right: 0;
+  bottom: 0;
+}
+.heart-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.heart-icon img {
+  width: 200px; /* Adjust size as necessary */
+}
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.background-elements img {
+  position: absolute;
+}
+.background-elements img:nth-child(1) {
+  top: 10%;
+  left: 5%;
+}
+.background-elements img:nth-child(2) {
+  top: 10%;
+  right: 5%;
 }
