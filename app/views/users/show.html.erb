@@ -1,2 +1,17 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="navbar"></div>
+<h2 class="mb-3 p-3">Dates à venir</h2>
+<div class="cards-offers d-flex flex-row">
+  <%@user.offers.each do |offer| %>
+  <div class="card-date-offer d-flex mb-3 p-3">
+    <div class="d-flex justify-content-center align-items-center">
+      <img src="" alt="<%= offer.title %> photo">
+      <div class="d-flex flex-column">
+        <h3><%= offer.title %></h3>
+        <p><%= offer.description%></p>
+      </div>
+    </div>
+  </div>
+  <%end %>
+</div>
+
+<div class="footer"></div>
