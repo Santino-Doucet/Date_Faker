@@ -1,7 +1,36 @@
-<h1>Offers#index</h1>
-<p>Find me in app/views/offers/index.html.erb</p>
-
 <nav class="navbar">
+  <div class="navbar-logo">
+      <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "120" %>
+  </div>
+  <div class="navbar-search">
+      <input type="text" placeholder="Où">
+      <input type="text" placeholder="Quand">
+      <button type="submit">Rechercher</button>
+  </div>
+
+  <div class="navbar-offer">
+      <button class="offer-btn">Je dépose une offre</button>
+  </div>
+</nav>
+
+    <section class="real-connections-section">
+    <div class="text-content">
+      <h1>Trouve ton <span class="highlight">fake date </span>pour tous les événements en 1 click</h1>
+      <p class="description">
+        We are committed to helping singles find love every day, and we are confident in our ability to do so. eHarmony matches single women and men for lasting and fulfilling relationships.
+      </p>
+      <button class="cta-button">Booker</button>
+    </div>
+    <div class="image-content">
+      <img src="path-to-your-image/left-character.png" alt="Person using phone" class="left-character">
+      <img src="path-to-your-image/right-character.png" alt="Person using phone" class="right-character">
+      <div class="heart-icon">
+        <img src="path-to-your-image/heart-icon.png" alt="Heart icon">
+      </div>
+    </div>
+  </section>
+
+
   <section class="testimonial-section">
     <div class="testimonial-content">
       <h2>What Our <span class="highlight">Users Say</span> <span class="star-icon">✹</span></h2>
@@ -57,7 +86,7 @@
       <%= image_tag "man_woman_talk", alt: "man_woman_talk" %>
     </div>
   </section>
-</nav>
+
 
 <div class="footer-dark">
         <footer>
@@ -90,32 +119,3 @@
         </footer>
     </div>
 
-        <div class="navbar-logo">
-            <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "120" %>
-        </div>
-        <div class="navbar-search">
-            <input type="text" placeholder="Où">
-            <input type="text" placeholder="Quand">
-            <button type="submit">Rechercher</button>
-        </div>
-
-        <div class="navbar-offer">
-            <button class="offer-btn">Je dépose une offre</button>
-        </div>
-
-    <section class="real-connections-section">
-    <div class="text-content">
-      <h1>Trouve ton <span class="highlight">fake date </span>pour tous les événements en 1 click</h1>
-      <p class="description">
-        We are committed to helping singles find love every day, and we are confident in our ability to do so. eHarmony matches single women and men for lasting and fulfilling relationships.
-      </p>
-      <button class="cta-button">Booker</button>
-    </div>
-    <div class="image-content">
-      <img src="path-to-your-image/left-character.png" alt="Person using phone" class="left-character">
-      <img src="path-to-your-image/right-character.png" alt="Person using phone" class="right-character">
-      <div class="heart-icon">
-        <img src="path-to-your-image/heart-icon.png" alt="Heart icon">
-      </div>
-    </div>
-  </section>
