@@ -1,6 +1,6 @@
 class Offer < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  has_many :bookings
+  belongs_to :user
+  has_many :bookings, dependent: :destroy
   validates :title, presence: true
   validates :description, presence: true, length: { in: 20..500 }
   validates :localisation, presence: true
