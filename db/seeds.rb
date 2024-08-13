@@ -22,8 +22,10 @@ puts "Creating 5 Users with offers and booking"
       description: Faker::GreekPhilosophers.quote,
       localisation: Faker::Address.city,
       user_id: user.id,
-      price: rand(1.0...300.0)
+      price: rand(1.0...300.0).round(2)
     )
+    offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
+    offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
     rand(0..1).times do
       ids = User.ids
       unless ids.size == 1
