@@ -1,0 +1,95 @@
+/* General styling */
+.work_section {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fcf1c3; /* Light yellow background */
+}
+
+.app-works-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Content container */
+.content-container {
+  max-width: 50%;
+}
+
+h1 {
+  font-size: 48px;
+  color: #000000;
+}
+
+.highlight {
+  color: #f598a8; /* Pink color for "Work?" */
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Steps styling */
+.steps-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.step-box {
+  background-color: #e0f7fa; /* Light cyan */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 0px #00000022; /* Adding shadow */
+  position: relative;
+}
+
+.step-box h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #000;
+}
+
+.step-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #00acc1;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.steps-container .step-box:nth-child(3) {
+  background-color: #e0f4e7; /* Light green */
+}
+
+.steps-container .step-box:nth-child(4) {
+  background-color: #f4e4fa; /* Light purple */
+}
+
+/* Image container */
+.image-container {
+  max-width: 45%;
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}

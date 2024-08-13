@@ -1,0 +1,73 @@
+/* General styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.testimonial-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+/* Text content styling */
+.testimonial-content {
+  max-width: 50%;
+}
+
+h2 {
+  font-size: 36px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #f598a8; /* Pink color */
+}
+
+.star-icon {
+  color: #f598a8;
+}
+
+.quote-icon {
+  font-size: 48px;
+  color: #f598a8;
+  margin: 20px 0;
+}
+
+.testimonial-quote {
+  font-size: 24px;
+  color: #333333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-size: 18px;
+  color: #f598a8;
+  font-weight: bold;
+}
+
+/* Illustration styling */
+.illustration {
+  position: relative;
+  max-width: 40%;
+}
+
+.thumbs-up {
+  width: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.couple {
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}

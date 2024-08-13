@@ -1,13 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DateFaker Navbar</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<h1>Offers#index</h1>
+<p>Find me in app/views/offers/index.html.erb</p>
+
 <nav class="navbar">
+  <section class="testimonial-section">
+    <div class="testimonial-content">
+      <h2>What Our <span class="highlight">Users Say</span> <span class="star-icon">✹</span></h2>
+      <div class="quote-icon">“</div>
+      <p class="testimonial-quote">
+        Hinge’s prompts really made the difference — I felt like I got a good sense of a guy’s vibe from his answers, and it was easy to jump right into a real conversation.
+      </p>
+      <p class="testimonial-author">Helena Ann</p>
+    </div>
+
+    <div class="illustration">
+      <img src="path-to-your-image/thumbs-up.png" alt="Thumbs up" class="thumbs-up">
+      <img src="path-to-your-image/characters.png" alt="Couple holding thumbs up" class="couple">
+    </div>
+
+    <div class="image-container">
+      <%= image_tag "client", alt: "client" %>
+    </div>
+  </section>
+
+  <section class="app-works-section work_section">
+    <div class="content-container">
+      <h1>Comment ça <span class="highlight">marche?</span></h1>
+      <p class="description">
+        We are committed to helping singles find love every day, and we are confident in our ability to do so. eHarmony matches single women and men for lasting and fulfilling relationships.
+      </p>
+
+      <div class="steps-container">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <h2>Inscrivez-vous</h2>
+          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <h2>Lancer la recherche</h2>
+          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <h2>Postuler un offre</h2>
+          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <h2>Résever votre date</h2>
+          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <%= image_tag "man_woman_talk", alt: "man_woman_talk" %>
+    </div>
+  </section>
+</nav>
+
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                      <div class="col-sm-6 col-md-3 item">
+                        <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "120" %>
+                      </div>
+                    <div class="col-sm-6 col-md-3 item">
+                      <ul>
+                        <a href="#"><h3>About</h3></a>
+                        <a href="#"><h3>Book a fake bf</h3></a>
+                        <a href="#"><h3>Offer a service</h3></a>
+                        <a href="#"><h3>Career</h3></a>
+                      </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Date Faker</h3>
+                        <p>Amour sans détour! <br> Tourver ton fake date pour tous les évétements en 1 click</p>
+                    </div>
+                    <div class="col item social">
+                      <a href="#"><i class="fa-brands fa-facebook fa-xl icon ion-social-facebook"></i></a>
+                      <a href="#"><i class="icon ion-social-twitter fa-brands fa-instagram fa-xl"></i></a>
+                      <a href="#"><i class="icon ion-social-snapchat fa-brands fa-github fa-xl"></i></a>
+                      <a href="#"><i class="icon ion-social-instagram fa-solid fa-poo fa-xl"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Date Faker © 2024</p>
+            </div>
+        </footer>
+    </div>
+
         <div class="navbar-logo">
             <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "120" %>
         </div>
@@ -20,7 +102,7 @@
         <div class="navbar-offer">
             <button class="offer-btn">Je dépose une offre</button>
         </div>
-    </nav>
+
     <section class="real-connections-section">
     <div class="text-content">
       <h1>Trouve ton <span class="highlight">fake date </span>pour tous les événements en 1 click</h1>
@@ -37,7 +119,3 @@
       </div>
     </div>
   </section>
-</body>
-</html>
-</body>
-</html>
