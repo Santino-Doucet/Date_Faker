@@ -1,6 +1,8 @@
 <nav class="navbar">
   <div class="navbar-logo">
-      <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "120" %>
+      <%= image_tag "logo", alt: "logo", width: "auto", height: "120" %>
+        <div class="text-logo"><p>Faker date</p>
+        </div>
   </div>
   <div class="navbar-search">
       <input type="text" placeholder="Où">
@@ -17,37 +19,70 @@
     <div class="text-content">
       <h1>Trouve ton <span class="highlight">fake date </span>pour tous les événements en 1 click</h1>
       <p class="description">
-        We are committed to helping singles find love every day, and we are confident in our ability to do so. eHarmony matches single women and men for lasting and fulfilling relationships.
-      </p>
+Vous craignez les questions gênantes en famille ou de venir seul à un mariage, dîner d'affaires, ou autre ? Pas de souci ! Avec DateFaker, évitez l'embarras grâce à un compagnon fictif, quelle que soit l'occasion.
+    </p>
       <button class="cta-button">Booker</button>
     </div>
     <div class="image-content">
-      <img src="path-to-your-image/left-character.png" alt="Person using phone" class="left-character">
-      <img src="path-to-your-image/right-character.png" alt="Person using phone" class="right-character">
+      <%= image_tag "img2", alt: "img_2", width: "auto", height: "400" %>
       <div class="heart-icon">
-        <img src="path-to-your-image/heart-icon.png" alt="Heart icon">
+        <img src="path-to-your-image/heart-icon.png" alt="">
       </div>
     </div>
   </section>
 
+<section class="category">
+<div class="container">
+  <div class="box">
+  <%= image_tag "mariage", alt: "mariage", width: "auto", height: "120" %>
+    <p>Mariage</p>
+  </div>
+  <div class="box">
+    <%= image_tag "meal", alt: "meal", width: "auto", height: "120" %>
+    <p>Repas de famille</p>
+  </div>
+  <div class="box">
+    <%= image_tag "business", alt: "business", width: "auto", height: "120" %>
+    <p>Dîner d'affaires</p>
+  </div>
+  <div class="box">
+  <%= image_tag "hug", alt: "hug", width: "auto", height: "120" %>
+    <p>Consolation après une rupture</p>
+  </div>
+  <div class="box">
+    <%= image_tag "sad", alt: "sad", width: "auto", height: "120" %>
+    <p>Support lors d'une situation stressante</p>
+  </div>
+  <div class="box">
+    <%= image_tag "interrogation", alt: "interrogation", width: "auto", height: "120" %>
+    <p>Autres</p>
+  </div>
+</div>
+
+</section>
+
+<section class="offers">
+  <div class="offers-category">
+    <% Offer.all.each do |offer|%>
+      <%= link_to offer_path(offer) do %>
+        <%= image_tag "toto", alt: "toto", width: "auto", height: "120" %>
+        <p><%= offer.description %></p>
+      <% end %>
+    <% end %>
+  </div>
+</section>
 
   <section class="testimonial-section">
     <div class="testimonial-content">
-      <h2>What Our <span class="highlight">Users Say</span> <span class="star-icon">✹</span></h2>
+      <h2>Ce que pense <span class="highlight">nos utilisateurs</span> <span class="star-icon">✹</span></h2>
       <div class="quote-icon">“</div>
       <p class="testimonial-quote">
-        Hinge’s prompts really made the difference — I felt like I got a good sense of a guy’s vibe from his answers, and it was easy to jump right into a real conversation.
-      </p>
+J’ai utilisé DateFaker pour un mariage où je ne voulais pas aller seul, et c’était parfait ! Mon 'faux' compagnon était charmant et a su jouer son rôle à la perfection. Aucune question gênante, et j’ai passé une super soirée sans le moindre stress. Je recommande vivement !      </p>
       <p class="testimonial-author">Helena Ann</p>
     </div>
 
-    <div class="illustration">
-      <img src="path-to-your-image/thumbs-up.png" alt="Thumbs up" class="thumbs-up">
-      <img src="path-to-your-image/characters.png" alt="Couple holding thumbs up" class="couple">
-    </div>
-
     <div class="image-container">
-      <%= image_tag "client", alt: "client" %>
+      <%= image_tag "mobile", alt: "mobile" %>
     </div>
   </section>
 
@@ -55,8 +90,7 @@
     <div class="content-container">
       <h1>Comment ça <span class="highlight">marche?</span></h1>
       <p class="description">
-        We are committed to helping singles find love every day, and we are confident in our ability to do so. eHarmony matches single women and men for lasting and fulfilling relationships.
-      </p>
+DateFaker s'engage à vous aider dans les situations sociales délicates en vous connectant avec des experts prêts à jouer le rôle parfait pour vous.      </p>
 
       <div class="steps-container">
         <div class="step-box">
@@ -105,7 +139,7 @@
                     </div>
                     <div class="col-md-6 item text">
                         <h3>Date Faker</h3>
-                        <p>Amour sans détour! <br> Tourver ton fake date pour tous les évétements en 1 click</p>
+                        <p>Amour sans détour! <br> Trouve ton fake date pour tous les évétements en 1 click</p>
                     </div>
                     <div class="col item social">
                       <a href="#"><i class="fa-brands fa-facebook fa-xl icon ion-social-facebook"></i></a>
@@ -118,4 +152,3 @@
             </div>
         </footer>
     </div>
-
