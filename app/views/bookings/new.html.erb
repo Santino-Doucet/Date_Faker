@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="message-booking">
-      <%= simple_form_for @booking do |f| %>
+      <%= simple_form_for [@offer, @booking] do |f| %>
         <div class="form-inputs">
           <%= f.input :message, label: false , placeholder: "Envoyer un message...",
                       autofocus: true%>
