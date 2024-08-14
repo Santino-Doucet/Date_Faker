@@ -17,6 +17,9 @@ body {
   height: 50px;
 }
 
+.text-logo {
+  color:#30207c;
+}
 .navbar-search-group {
   display: flex;
   align-items: center;
@@ -28,7 +31,7 @@ body {
   display: flex;
   align-items: center;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 24px;
   padding: 5px 10px;
   max-width: 600px;
   width: 100%;
@@ -50,7 +53,7 @@ body {
 
 .navbar-search button {
   padding: 8px 16px;
-  background-color: #f298a8;
+  background-color:#f298a8;
   color: white;
   border: none;
   border-radius: 25px;
@@ -59,22 +62,23 @@ body {
 
 .navbar-offer .offer-btn {
   padding: 8px 16px;
-  background-color: #f298a8;
+  background-color: #30207c;
   color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
 }
 
-.navbar-offer .offer-btn:hover,
+.navbar-offer .cta-button .offer-btn:hover,
 .navbar-search button:hover {
-  background-color: #46B7F8;
+  background-color: #7da4f8;
 }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #fef5e6; /* Light yellow background */
+  padding: 20px;
+  background-color: #fef5e6;
 }
 .real-connections-section {
   display: flex;
@@ -84,7 +88,7 @@ body {
   background-color: #fef5e6;
   position: relative;
 }
-/* Text content styling */
+
 .text-content {
   max-width: 40%;
   text-align: center;
@@ -94,15 +98,15 @@ h1 {
   color: #000000;
 }
 .highlight {
-  color: #f598a8; /* Pink color for "Real Connections" */
+  color: #f598a8;
 }
 .description {
   font-size: 18px;
   color: #555;
   margin: 20px 0;
 }
-.cta-button {
-  background-color: #f598a8; /* Pink button */
+.cta-button { /* btn booker */
+  background-color: #7da4f8;
   border: none;
   padding: 15px 30px;
   font-size: 16px;
@@ -112,7 +116,7 @@ h1 {
   box-shadow: 5px 5px 0px #00000022;
   margin-top: 20px;
 }
-/* Image content styling */
+
 .image-content {
   position: relative;
   max-width: 50%;
@@ -137,7 +141,7 @@ h1 {
   z-index: 1;
 }
 .heart-icon img {
-  width: 200px; /* Adjust size as necessary */
+  width: 200px;
 }
 .background-elements {
   position: absolute;
@@ -157,4 +161,61 @@ h1 {
 .background-elements img:nth-child(2) {
   top: 10%;
   right: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+.box {
+  flex: 0 1 calc(16.66% - 10px);
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow:4px 4px 4px #30207c;
+  overflow: hidden;
+}
+
+.box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  transition: transform 0.5s ease;
+}
+
+.box p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+.offers-category {
+  display: flex;
+  box-sizing: border-box;
+  background-color:#b3c6f1 ;
+  padding: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.avatar {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.offers-category p{
+  margin: 0;
+  font-size: 14px;
 }
