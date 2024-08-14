@@ -1,2 +1,66 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="navbar"></div>
+<div class="container d-flex flex-row justify-content-center mb-3 p-3">
+  <div class="card-booking-info-left justify-content-center align-items-center mb-3 p-3">
+    <div class="booking-info">
+      <h2>Réservation</h2>
+      <h3>Envoyez un message avant de réserver votre Date Faker !</h3>
+      <p>Indiquez la raison de votre réservation et les détails qui pourraient être interéssants pour votre futur Date Faker.</p>
+    </div>
+    <div class="card-user-offer">
+      <div class="card-user-offer-title">
+
+      </div>
+    </div>
+    <div class="message-booking">
+      <%= simple_form_for @booking do |f| %>
+        <div class="form-inputs">
+          <%= f.input :message, label: false , placeholder: "Envoyer un message...",
+                      autofocus: true%>
+          <%= f.input :booked_on, label: "Date de réservation" ,
+                      autofocus: true%>
+          <%= f.submit%>
+        </div>
+<% end %>
+    </div>
+  </div>
+
+  <div class="card-booking-info-right d-flex flex-column justify-content-center bg-light mb-3 p-3">
+    <div class="booking-info-top d-flex flex-row justify-content-between">
+      <div class="offer-img">
+        <%= cl_image_tag @offer.photos.first.key, height: 100, width: 150, crop: :fill, alt: "#{@offer.title} photo" %>
+          <% if @offer.photos.count == 0 %>
+            <%= image_tag "", height: 100, width: 150, crop: :fill, alt: "No photo" %>
+          <% end %>
+      </div>
+      <div class="offer-info">
+        <h3><%= @offer.title %></h3>
+        <p><%= @offer.description%></p>
+      </div>
+    </div>
+    <div class="price-title">
+      <h3>Détails du prix</h3>
+    </div>
+    <div class="booking-info-bottom d-flex flex-row justify-content-between">
+      <div class="price-recap-left">
+        <div class="price-summary mb-5">
+          <p><%= @offer.price %>€ x 1 jour</p>
+          <p>Frais de service</p>
+        </div>
+        <div class="price-total">
+          <p><strong>Total</strong></p>
+        </div>
+      </div>
+        <div class="price-recap-right">
+        <div class="price-summary mb-5">
+            <% frais = 5.99 %>
+            <p><%= @offer.price %>€</p>
+            <p><%= frais %>€</p>
+          </div>
+          <div class="price-total">
+            <p><strong><%= @offer.price + frais %>€</strong></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>

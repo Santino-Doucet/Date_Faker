@@ -4,13 +4,15 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @offer = Offer.find(params[:offer_id])
+    # @user = User.find(params[:user_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find(params[:id])
-    @offer = Offer.find(params[:id])
+    @booking.user = User.find(params[:user_id])
+    @booking.offer = Offer.find(params[:offer_id])
     if @booking.save
       redirect_to bookings_path
     else
