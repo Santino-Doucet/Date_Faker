@@ -9,12 +9,15 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: #fef5e6;
-  padding: 10px 20px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
   color: white;
 }
 
 .navbar-logo img {
   height: 50px;
+  padding-left: 15px;
 }
 
 .text-logo {

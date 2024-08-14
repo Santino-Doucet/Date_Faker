@@ -1,4 +1,4 @@
-<div class="navbar"></div>
+<%= render 'navbar' %>
 <h1>Créez votre offre</h1>
 <div class="form-container">
   <%= simple_form_for @offer do |f| %>
@@ -12,4 +12,4 @@
     </div>
   <% end %>
 </div>
-<div class="footer"></div>
+<div class="footer"><%= render 'footer' %></div>
