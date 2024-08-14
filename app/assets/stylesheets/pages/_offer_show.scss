@@ -1,0 +1,159 @@
+body {
+  background-color:#fef5e6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color:#fef5e6;
+}
+
+.navbar-logo img {
+  height: 20px;
+}
+
+.navbar-search-group {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 24px;
+  padding: 5px 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#logo {
+height: 30px;
+}
+.logo {
+  color:#30207c;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f298a8;
+  border: none;
+  color: white;
+}
+
+.profile-icon {
+  padding: 20px;
+  background-color: #fcfbfb;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+main {
+  padding: 50px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.profile-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 10px;
+}
+
+.photo {
+  width: 150px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.details {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 40px;
+}
+
+.user-details {
+  font-size: 18px;
+}
+
+.availability {
+  text-align: right;
+}
+
+.availability button {
+  padding: 15px 30px;
+  background-color: #f298a8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 15px 30px;
+  background-color: #f298a8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
