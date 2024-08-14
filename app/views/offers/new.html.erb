@@ -1,18 +1,15 @@
 <div class="navbar"></div>
 <h1>Créez votre offre</h1>
-<%= simple_form_for @offer do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title, label: "Titre de l'annonce :",
-                autofocus: true%>
-    <%= f.input :description, label: 'Décris-toi en quelques lignes',
-                autofocus: true%>
-    <%= f.input :price, label: 'Quel est ton prix par jour ?',
-                autofocus: true%>
-    <%= f.input :photos, as: :file, input_html: { multiple: true },
-                label: 'Ajoute tes plus belles photos !' %>
-    <%= f.input :localisation, label: 'Quelle est ta mobilité ?',
-                autofocus: true%>
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="form-container">
+  <%= simple_form_for @offer do |f| %>
+    <div class="form-inputs">
+      <%= f.input :title, label: "Titre de l'annonce :", autofocus: true %>
+      <%= f.input :description, label: 'Décris-toi en quelques lignes', autofocus: true %>
+      <%= f.input :price, label: 'Quel est ton prix par jour ?', autofocus: true %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Ajoute tes plus belles photos !' %>
+      <%= f.input :localisation, label: 'Quelle est ta mobilité ?', autofocus: true %>
+      <%= f.submit "Envoyer", class: "button" %>
+    </div>
+  <% end %>
+</div>
 <div class="footer"></div>
