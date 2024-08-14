@@ -17,7 +17,7 @@ puts "Creating 5 Users with offers and booking"
   )
   user.save!
   rand(0..3).times do
-    offer = Offer.create(
+    offer = Offer.new(
       title: Faker::Book.title,
       description: Faker::GreekPhilosophers.quote,
       localisation: Faker::Address.city,
@@ -26,11 +26,12 @@ puts "Creating 5 Users with offers and booking"
     )
     offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
     offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
+    offer.save!
     rand(0..1).times do
       ids = User.ids
       unless ids.size == 1
         ids.delete(user.id)
-        booking = Booking.create(
+        booking = Booking.create!(
           user_id: ids.sample,
           offer_id: offer.id,
           message: Faker::Movie.quote,
