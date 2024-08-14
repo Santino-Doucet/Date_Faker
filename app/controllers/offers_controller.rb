@@ -7,14 +7,15 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    @user = current_user
   end
 
   def create
     @offer = Offer.new(offer_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @offer.user = @user
     if @offer.save
-      redirect_to offer_path
+      redirect_to offer_path(@offer)
     else
       render :new, status: :unprocessable_entity
     end
