@@ -1,43 +1,55 @@
-
-<div class="navbar">
-  <div class="logo">Date Faker</div>
-    <%= image_tag "logo", alt: "logo", id:"logo" %>
-    <div class="search-bar">
-      <input type="text" placeholder="Anywhere">
-      <input type="text" placeholder="Any week">
-      <input type="text" placeholder="Add guests">
-  </div>
-  <div class="profile-icon">JL</div>
-</div>
-
+<%= render "navbar" %>
 <main>
-  <h1>One-day marriage date with JL</h1>
-  <div class="profile">
-    <div class="profile-image">
-        <%= image_tag "jlo", alt: "jlo", width: "auto", height: "230" %>
-    </div>
-    <div class="photo-gallery">
-        <div class="photo"></div>
-        <div class="photo"></div>
-        <div class="photo"></div>
-        <div class="photo"></div>
+  <h1><strong><%= @offer.title %></strong></h1>
+  <div class="card">
+    <div class="profile">
+      <div class="photo-gallery">
+        <div class="profile-image main-image" style="background-image: url('<%= @offer.photos.first.url %>')">
+        </div>
+        <div class="secondary-images">
+          <% @offer.photos.each do |photo| %>
+            <% if photo != @offer.photos.first %>
+              <div class="secondary-image" style="background-image: url('<%= photo.url %>')">
+              <%# #donne le lien de la photo %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 
-  <section class="details">
-    <div class="location">
+  <div class="card">
+    <section class="details">
+      <div class="location">
         <div class="user-icon">JL</div>
         <div class="user-details">
-            <h2>Jennifer Lopez</h2>
-            <p>Age: 50 years old</p>
-            <p>Height: 1.75m</p>
-            <p>Occupation: Singer</p>
+          <p>Nom: <%= @user.first_name %> <%= @user.last_name %></p>
+          <p>Age: <%= @user.age %></p>
+          <p>Gender: <%= @user.gender %></p>
+          <p>Prix: <%= @offer.price %> €</p>
+          <p>Descriptions: <br><%= @offer.description %></p>
+          <p>Mobilités: <%= @offer.localisation %></p>
+          <p>Disponibilités: </p>
         </div>
-    </div>
-      <div class="availability">
-        <p>Availabilities: Every Saturday afternoon</p>
+      </div>
       <div class="btn">
         <%= link_to "Booker", new_offer_booking_path(@offer)%>
       </div>
-  </section>
+    </section>
+  </div>
 </main>
+<%= render "footer" %>
+
+<%# <body>
+    <div class="images">
+      <div class="main-image" style="background-image: url('https://imgs.search.brave.com/p82VovnYmIjnKXUkqiTsiqWL4wfy5ZDGGPDXisodfP8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDYz/NjMyODQ3L3Bob3Rv/L2x5b24tdmlldy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/ejh1b2RaX0Y0bHVY/RTVwNF9iUHF3di1E/QmNnRTlkN0s1bzhk/d09UanZhaz0');">
+      </div>
+      <div class="secondary-images">
+        <div class="secondary-image" style="background-image: url('https://imgs.search.brave.com/D_ybSq7R2pvoNFx4cWtrCfIVBLDdnb9KB3WVfRb1wyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE3/Njc5OTU5MS9waG90/by9wbGFjZS1iZWxs/ZWNvdXItbHlvbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/SndoQmhsa0pZMlVu/cjZVaU5YejNaYk5F/c0I1QXRXR2NkTjha/X3dDREhiMD0');"></div>
+        <div class="secondary-image" style="background-image: url('https://imgs.search.brave.com/D_ybSq7R2pvoNFx4cWtrCfIVBLDdnb9KB3WVfRb1wyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE3/Njc5OTU5MS9waG90/by9wbGFjZS1iZWxs/ZWNvdXItbHlvbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/SndoQmhsa0pZMlVu/cjZVaU5YejNaYk5F/c0I1QXRXR2NkTjha/X3dDREhiMD0');"></div>
+        <div class="secondary-image" style="background-image: url('https://imgs.search.brave.com/D_ybSq7R2pvoNFx4cWtrCfIVBLDdnb9KB3WVfRb1wyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE3/Njc5OTU5MS9waG90/by9wbGFjZS1iZWxs/ZWNvdXItbHlvbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/SndoQmhsa0pZMlVu/cjZVaU5YejNaYk5F/c0I1QXRXR2NkTjha/X3dDREhiMD0');"></div>
+        <div class="secondary-image" style="background-image: url('https://imgs.search.brave.com/D_ybSq7R2pvoNFx4cWtrCfIVBLDdnb9KB3WVfRb1wyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE3/Njc5OTU5MS9waG90/by9wbGFjZS1iZWxs/ZWNvdXItbHlvbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/SndoQmhsa0pZMlVu/cjZVaU5YejNaYk5F/c0I1QXRXR2NkTjha/X3dDREhiMD0');"></div>
+      </div>
+    </div>
+</body> %>

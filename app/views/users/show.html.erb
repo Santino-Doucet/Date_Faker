@@ -1,5 +1,5 @@
 <div class="navbar"></div>
-<h2 class="mb-3 p-3">Dates à venir</h2>
+<h2 class="mb-3 p-3">Offres publiées</h2>
 <div class="cards-offers d-flex flex-row">
   <%@user.offers.each do |offer| %>
   <div class="card-date-offer d-flex mb-3 p-3">
@@ -10,7 +10,7 @@
       <% end %>
       <div class="d-flex flex-column">
         <h3><%= offer.title %></h3>
-        <p><%= offer.description%></p>
+        <p><%= offer.description %></p>
       </div>
     </div>
   </div>
