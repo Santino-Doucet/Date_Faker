@@ -1,75 +1,8 @@
 body {
-  background-color:#fef5e6;
+  background-color: #fef5e6;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color:#fef5e6;
-}
-
-.navbar-logo img {
-  height: 20px;
-}
-
-.navbar-search-group {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: center;
-}
-
-.navbar-search {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 24px;
-  padding: 5px 10px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#logo {
-height: 30px;
-}
-.logo {
-  color:#30207c;
-}
-
-.search-bar {
-  display: flex;
-  gap: 10px;
-}
-
-.search-bar input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.search-bar button {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f298a8;
-  border: none;
-  color: white;
-}
-
-.profile-icon {
-  padding: 20px;
-  background-color: #fcfbfb;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
 }
 
 main {
@@ -83,34 +16,54 @@ h1 {
 
 .profile {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 30px;
-}
-
-.profile-image img {
-  width: 300px;
   border-radius: 10px;
 }
 
+.profile-image {
+  // height: inherit;
+  height: 100%;
+  width: 50%;
+}
+
+.profile-image img {
+  // width: 70%;
+  // max-width: 100%;
+  // height: inherit;
+  border-radius: 10px;
+  height: 100%;
+  width: 50%;
+}
+
 .photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 150px);
-  gap: 10px;
+  height: 80vh;
+  display: flex;
+  padding: 8px;
+  gap: 8px;
 }
 
 .photo {
-  width: 150px;
-  height: 100px;
-  background-color: #ccc;
+  width: 100%;
   border-radius: 5px;
+  overflow: hidden;
+  height: inherit;
+}
+
+.photo img {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
 .details {
-  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:20px;
+  padding: 20px;
 }
 
 .location {
@@ -139,7 +92,8 @@ h1 {
   text-align: right;
 }
 
-.availability button {
+.availability button,
+.btn {
   padding: 15px 30px;
   background-color: #f298a8;
   color: white;
@@ -150,10 +104,61 @@ h1 {
 }
 
 .btn {
-  padding: 15px 30px;
-  background-color: #f298a8;
+  margin-top: auto; /* Push the button to the bottom of the card */
+  align-self: flex-start; /* Align the button to the left */
+}
+
+.footer {
+  padding: 20px;
+  background-color: #30207c;
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  text-align: center;
+}
+
+.card {
+  background-color: white; /* White background for the cards */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside the card */
+  margin: 20px; /* Space between cards */
+}
+
+.details {
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px; /* Padding for spacing within the details section */
+}
+// --------------
+// .images {
+//   width: 90vw;
+//   height: 80vh;
+//   background-color: purple;
+//   display: flex;
+//   padding: 8px;
+//   gap: 8px;
+// }
+
+.main-image {
+  height: 100%;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.secondary-images {
+  height: 100%;
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.secondary-image {
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
