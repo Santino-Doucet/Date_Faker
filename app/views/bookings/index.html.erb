@@ -1,2 +1,34 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+  <div class="d-flex justify-content-between mb-5">
+    <div class="row">
+      <div class="col-lg-6">
+        <p>LOGO</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <p>LOGIN</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Mes offres</p>
+  <div class="d-flex justify-content-start gap-3">
+      <% @offers.each do |o| %>
+        <div>
+          <%= cl_image_tag o.photos.first.key, height: 200, width: 300, crop: :fill  %>
+          <p><%= o.user.first_name %> <%= o.user.last_name %> <br>
+          <%= o.title %></p>
+        </div>
+      <% end %>
+  </div>
+
+  <p>Mes reservations</p>
+  <div class="d-flex justify-content-start gap-3">
+    <% @bookings.each do |b| %>
+      <div>
+        <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
+        <p><%= b.offer.user.first_name %> <%= b.offer.user.last_name %> <br><%= b.message %></p>
+      </div>
+    <% end %>
+  </div>
