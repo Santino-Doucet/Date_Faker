@@ -8,7 +8,7 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
     </p>
     </div>
     <div class="image-content">
-      <%= image_tag "img2", alt: "img_2", width: "auto", height: "400" %>
+      <%= image_tag "img2", alt: "img_2", width: "auto", height: "200" %>
       <div class="heart-icon">
         <img src="path-to-your-image/heart-icon.png" alt="">
       </div>
@@ -50,19 +50,15 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
 
 <section class="offers">
   <div class="offers-category d-flex flex-column">
-    <div>
-      <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
-    </div>
-    <div class="d-flex flex-row">
-      <% @offers.each do |offer|%>
-        <%= link_to offer_path(offer) do %>
-          <%= cl_image_tag offer.photos.first.key, width: 100, height: 120, crop: :fill, alt: "#{offer.title} photo" %>
-          <% if offer.photos.count == 0 %>
-            <%= image_tag "", height: 300, width: 400, crop: :fill, alt: "No photo" %>
+    <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
+    <div class="slider">
+      <div class="slide-track">
+        <% @offers.each do |offer| %>
+          <%= link_to offer_path(offer), class: 'slide' do %>
+            <div class="carousel__face"><%=offer.title%></div>
           <% end %>
-          <p><%= offer.description %></p>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </section>
@@ -73,7 +69,6 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
       <p class="testimonial-quote">
 J’ai utilisé DateFaker pour un mariage où je ne voulais pas aller seul, et c’était parfait ! Mon 'faux' compagnon était charmant et a su jouer son rôle à la perfection. Aucune question gênante, et j’ai passé une super soirée sans le moindre stress. Je recommande vivement !      </p>
       <p class="testimonial-author">Helena Ann</p>
-      <div class="quote-icon">“</div>
     </div>
 
     <div class="image-container">
@@ -102,13 +97,13 @@ DateFaker s'engage à vous aider dans les situations sociales délicates en vous
         </div>
         <div class="step-box">
           <div class="step-number">4</div>
-          <h2>Résever votre date</h2>
+          <h2>Réserver votre date</h2>
         </div>
       </div>
     </div>
 
     <div class="image-container">
-      <%= image_tag "phone", alt: "phone"%>
+      <%= image_tag "service", alt: "service"%>
     </div>
   </section>
 
