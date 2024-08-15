@@ -10,12 +10,17 @@
                 autofocus: true%>
     <%= f.input :age, label: 'Age',
                 autofocus: true%>
-    <%= f.input :gender, label: 'Genre',
-                autofocus: true,
-                :collection => %w(Homme Femme Autre)%>
+    <%= f.input :gender,
+          :collection => [['Femme', 'Femme'], ['Homme', 'Homme'], ['Autre', 'Autre']],
+          :label_method => :last,
+          :value_method => :first,
+          :as => :radio_buttons,
+          :item_wrapper_class => 'inline',
+          :checked => true %>
     <%= f.input :hair_color,
                 autofocus: true,
                 :collection => %w(Blond Roux Noir Blanc Gris Bleu Vert Rouge Autre)%>
+    <%= f.input :photo, as: :file, label: 'Photo de profil' %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
