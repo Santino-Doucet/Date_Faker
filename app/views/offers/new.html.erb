@@ -4,10 +4,13 @@
   <%= simple_form_for @offer do |f| %>
     <div class="form-inputs">
       <%= f.input :title, label: "Titre de l'annonce :", autofocus: true %>
-      <%= f.input :description, label: 'Décris-toi en quelques lignes', autofocus: true %>
+      <%= f.input :description, label: 'Décris ton annonce', autofocus: true %>
       <%= f.input :price, label: 'Quel est ton prix par jour ?', autofocus: true %>
       <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Ajoute tes plus belles photos !' %>
-      <%= f.input :localisation, label: 'Quelle est ta mobilité ?', autofocus: true %>
+      <%= f.input :localisation, label: 'Dans quelle ville/région ?',
+        input_html: {data: {localisation_autocomplete_target: "localisation"}, class: "d-none"},
+        wrapper_html: {data: {controller: "localisation-autocomplete", localisation_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+      %>
       <%= f.submit "Envoyer", class: "button" %>
     </div>
   <% end %>
