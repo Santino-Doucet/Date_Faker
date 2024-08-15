@@ -4,6 +4,17 @@ Booking.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 puts "Done"
 
+puts "Creating 1 User test"
+user = User.create!(
+  email: "test@gmail.com",
+  password: "123456",
+  first_name: "User",
+  last_name: "Test",
+  gender:  "Homme",
+  age: 23,
+  hair_color: "Blond"
+)
+puts "Done"
 puts "Creating 5 Users with offers and booking"
 5.times do
   user = User.new(
