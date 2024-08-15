@@ -16,8 +16,12 @@
         <div class="form-inputs">
           <%= f.input :message, label: false , placeholder: "Envoyer un message...",
                       autofocus: true%>
-          <%= f.input :booked_on, label: "Date de réservation" ,
-                      autofocus: true%>
+          <%= f.input :booked_on,
+              label: "Date de réservation",
+              as: :string,
+              autofocus: true,
+              input_html: { data: { controller: "datepicker" } } %>
+
           <%= f.submit%>
         </div>
 <% end %>
