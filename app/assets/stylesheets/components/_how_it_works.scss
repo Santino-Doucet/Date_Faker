@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 16px 48px  ;
 }
 
 /* Content container */
@@ -43,6 +43,7 @@ h1 {
 .step-box {
   background-color: #e0f7fa; /* Light cyan */
   padding: 20px;
+  margin: 8px;
   border-radius: 10px;
   box-shadow: 10px 10px 0px #00000022; /* Adding shadow */
   position: relative;

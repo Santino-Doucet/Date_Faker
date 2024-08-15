@@ -21,7 +21,6 @@
       <p class="description">
 Vous craignez les questions gênantes en famille ou de venir seul à un mariage, dîner d'affaires, ou autre ? Pas de souci ! Avec DateFaker, évitez l'embarras grâce à un compagnon fictif, quelle que soit l'occasion.
     </p>
-      <button class="cta-button">Booker</button>
     </div>
     <div class="image-content">
       <%= image_tag "img2", alt: "img_2", width: "auto", height: "400" %>
@@ -32,14 +31,16 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
   </section>
 
 <section class="category">
-<div class="container">
+  <div class="container d-flex flex-column" >
+    <h2 class="title">Trouvez le complice pour chaque occasion</h2>
+    <div class="boxes">
   <div class="box">
-  <%= image_tag "mariage", alt: "mariage", width: "auto", height: "120" %>
-    <p>Mariage</p>
+    <%= image_tag "mariage", alt: "mariage", width: "auto", height: "120" %>
+      <p>Mariage</p>
   </div>
-  <div class="box">
-    <%= image_tag "meal", alt: "meal", width: "auto", height: "120" %>
-    <p>Repas de famille</p>
+    <div class="box">
+      <%= image_tag "meal", alt: "meal", width: "auto", height: "120" %>
+      <p>Repas de famille</p>
   </div>
   <div class="box">
     <%= image_tag "business", alt: "business", width: "auto", height: "120" %>
@@ -57,6 +58,7 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
     <%= image_tag "interrogation", alt: "interrogation", width: "auto", height: "120" %>
     <p>Autres</p>
   </div>
+  </div>
 </div>
 
 </section>
@@ -64,7 +66,7 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
 <section class="offers">
   <div class="offers-category d-flex flex-column">
     <div>
-      <h3>Offres du moment</h3>
+      <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
     </div>
     <div class="d-flex flex-row">
       <% @offers.each do |offer|%>
@@ -82,11 +84,11 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
 
   <section class="testimonial-section">
     <div class="testimonial-content">
-      <h2>Ce que pense <span class="highlight">nos utilisateurs</span> <span class="star-icon">✹</span></h2>
-      <div class="quote-icon">“</div>
+      <h2>Ce que pense <span class="highlight">nos utilisateurs</span></h2>
       <p class="testimonial-quote">
 J’ai utilisé DateFaker pour un mariage où je ne voulais pas aller seul, et c’était parfait ! Mon 'faux' compagnon était charmant et a su jouer son rôle à la perfection. Aucune question gênante, et j’ai passé une super soirée sans le moindre stress. Je recommande vivement !      </p>
       <p class="testimonial-author">Helena Ann</p>
+      <div class="quote-icon">“</div>
     </div>
 
     <div class="image-container">
@@ -104,28 +106,24 @@ DateFaker s'engage à vous aider dans les situations sociales délicates en vous
         <div class="step-box">
           <div class="step-number">1</div>
           <h2>Inscrivez-vous</h2>
-          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
         </div>
         <div class="step-box">
           <div class="step-number">2</div>
           <h2>Lancer la recherche</h2>
-          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
         </div>
         <div class="step-box">
           <div class="step-number">3</div>
           <h2>Postuler un offre</h2>
-          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
         </div>
         <div class="step-box">
           <div class="step-number">4</div>
           <h2>Résever votre date</h2>
-          <p>Thousands of singles find love through our dating sites each month. Register today.</p>
         </div>
       </div>
     </div>
 
     <div class="image-container">
-      <%= image_tag "man_woman_talk", alt: "man_woman_talk" %>
+      <%= image_tag "phone", alt: "phone"%>
     </div>
   </section>
 
