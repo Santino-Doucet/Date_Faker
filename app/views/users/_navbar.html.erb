@@ -1,46 +1,43 @@
 <nav class="navbar">
-  <%= link_to(root_path) do%>
-    <div class="navbar-logo">
-      <%= image_tag "logo", alt: "logo", width: "auto", height: "80" %>
-      <div class="text-logo">
-        <p>Date Faker</p>
-      </div>
-    </div>
-  <% end %>
-  </div>
-
-<div class="navbar-offer">
-      <%= link_to "Mes réservations", bookings_path, class: "offer-btn"%>
-  </div>
   <div class="navbar-offer">
     <% if !user_signed_in? %>
-      <%= link_to(new_user_session_path) do%>
+      <%= link_to(new_user_session_path) do %>
+        <i class="fa-regular fa-user avatar"></i>
+      <% end %>
+    <% elsif current_user.photo.key.nil? %>
+      <%= link_to(user_path(current_user)) do%>
         <i class="fa-regular fa-user avatar"></i>
       <% end %>
     <% else %>
-      <% if current_user.photo.key.nil? %>
-        <%= link_to(user_path(current_user)) do%>
-          <i class="fa-regular fa-user avatar"></i>
-        <% end %>
-      <% else %>
-        <%= link_to(user_path(current_user)) do%>
-          <%= cl_image_tag current_user.photo.key, crop: :fill, alt: "user avatar", class: "avatar" %>
-        <% end %>
+      <%= link_to(user_path(current_user)) do%>
+        <%= cl_image_tag current_user.photo.key, crop: :fill, alt: "user avatar", class: "avatar" %>
       <% end %>
     <% end %>
-  </div>
 
-  <div class="navbar-offer">
     <% if user_signed_in? %>
-      <%= button_to destroy_user_session_path, method: :delete do %>
-        <i class="fa-solid fa-right-from-bracket"></i>
-      <% end %>
-    <% else %>
-
+      <div class="navbar-offer">
+        <%= button_to destroy_user_session_path, method: :delete do %>
+          <i class="fa-solid fa-right-from-bracket"></i>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
-  <div class="navbar-offer">
+  <%= link_to(root_path) do %>
+    <div class="navbar-logo" style="display: flex; align-items: center;">
+      <%= image_tag "logo", alt: "logo", style: "margin-right: 10px;" %>
+      <div class="text-logo">
+        <p style="margin: 0">Date Faker</p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="navbar-offers">
+    <div class="navbar-offer">
       <%= link_to "Je dépose une offre", new_offer_path, class: "offer-btn"%>
+    </div>
+    <div class="navbar-offer">
+      <%= link_to "Mes réservations", bookings_path, class: "offer-btn"%>
+    </div>
   </div>
 </nav>
