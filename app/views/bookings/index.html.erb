@@ -7,7 +7,7 @@
       Mes demandes
     </summary>
     <div class="section">
-      <% if @requests.any? { |request| request.bookings.any? } %>
+      <% if @requests.any?%>
         <div class="d-flex justify-content-start gap-3">
         <% @requests.each do |booking| %>
             <div>
@@ -32,7 +32,7 @@
     </summary>
     <div class="section">
       <% if @bookings.any? %>
-        <div class="d-flex justify-content-center gap-3">
+        <div class="d-flex justify-content-start gap-3">
           <% @bookings.each do |b| %>
           <div>
             <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
