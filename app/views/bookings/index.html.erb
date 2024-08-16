@@ -7,39 +7,46 @@
       Les gens ont réservé mes offres
     </summary>
     <div class="section">
-      <div class="d-flex justify-content-start gap-3">
-        <% @offers.each do |o| %>
-        <% o.bookings.each do |b| %>
-          <div>
-            <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
-            <p><strong>Nom: </strong><%= b.offer.user.first_name %> <%= b.offer.user.last_name %><br>
-              <%= b.message %><br><strong>Date: </strong><%= b.booked_on %>
-            </p>
-          </div>
-        <% end %>
-        <% end %>
-      </div>
+      <% if @offers.any? { |o| o.bookings.any? } %>
+        <div class="d-flex justify-content-start gap-3">
+          <% @offers.each do |o| %>
+          <% o.bookings.each do |b| %>
+            <div>
+              <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
+              <p><strong>Nom: </strong><%= b.offer.user.first_name %> <%= b.offer.user.last_name %><br>
+                <%= b.message %><br><strong>Date: </strong><%= b.booked_on %>
+              </p>
+            </div>
+          <% end %>
+          <% end %>
+        </div>
+      <% else %>
+        <h3>Woah c'est vide!</h3>
+      <% end %>
     </div>
   </details>
 </div>
 
-<!-- Card with dropdown for 'Mes reservations' -->
 <div class="card">
   <details class="dropdown-card" open>
     <summary class="dropdown-title">
       Mes reservations
     </summary>
     <div class="section">
-      <div class="d-flex justify-content-center gap-3">
-        <% @bookings.each do |b| %>
-        <div>
-          <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
-          <p><strong>Nom: </strong><%= b.offer.user.first_name %> <%= b.offer.user.last_name %> <br>
-            <strong>Date: </strong><%= b.booked_on %>
-          </p>
+      <% if @bookings.any? %>
+        <div class="d-flex justify-content-center gap-3">
+          <% @bookings.each do |b| %>
+          <div>
+            <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
+            <p><strong>Nom: </strong><%= b.offer.user.first_name %> <%= b.offer.user.last_name %> <br>
+              <strong>Date: </strong><%= b.booked_on %>
+            </p>
+          </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
+      <% else %>
+        <h3>Woah c'est vide!</h3>
+      <% end %>
     </div>
   </details>
 </div>
