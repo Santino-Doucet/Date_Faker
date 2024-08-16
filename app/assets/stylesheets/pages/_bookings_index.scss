@@ -35,6 +35,13 @@ h3 {
   margin-bottom: 20px; /* Space below heading */
 }
 
+/* Section Heading */
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #30207c; /* Consistent with footer and navbar */
+}
+
 /* Image Styling */
 img {
   border-radius: 5px; /* Rounded corners for images */
@@ -56,17 +63,71 @@ img:hover {
 /* Flexbox for Layout */
 .d-flex {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px; /* Consistent gap between items */
   justify-content: center;
 }
 
-.d-flex > div {
-  flex: 1 1 250px; /* Flex-grow for responsive design */
+.d-flex > div { /* Flex-grow for responsive design */
   background-color: #f8f8f8; /* Light background for contrast */
   border-radius: 10px; /* Rounded corners */
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.booking-info { /* Flex-grow for responsive design */
+  background-color: #f8f8f8; /* Light background for contrast */
+  padding: 10px 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.booking-info-top { /* Flex-grow for responsive design */
+  background-color: #f8f8f8; /* Light background for contrast */
+  padding: 10px;
+}
+
+.form-inputs { /* Flex-grow for responsive design */
+  background-color: #f8f8f8; /* Light background for contrast */
+  padding: 10px 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+
+.offer-img {
+  background-color: #f8f8f8; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  align-items: center;
+}
+
+.card-user-offer { /* Flex-grow for responsive design */
+  background-color: #f8f8f8; /* Light background for contrast */
+  padding: 10px 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);/* Subtle shadow for depth */
+}
+
+#name_avatar{
+  margin: 0;
+  padding: 0;
+}
+
+.card-booking-info-left {
+  border-radius: 10px;
+}
+
+.card-booking-info-right {
+  border-radius: 10px;
+}
+
+.avatar-round{
+  border-radius:50%;
+  background-color: #fef5e6;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.offer-info {
+  width: 300px;
 }
 
 /* Media Queries for Responsiveness */
