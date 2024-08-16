@@ -1,0 +1,50 @@
+$animationSpeed: 30s;
+
+// Keyframes for scrolling animation
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 14 + 20px * 13)); } /* Adjusted for margin */
+}
+
+// Slider container styling
+.slider {
+    background-color: #b3c6f1;
+    border-radius: 10px;
+    background: white;
+    height: 320px; /* Adjust to fit the height of the carousel items */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+// Slide track container styling
+.slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(320px * 14 + 20px * 13); /* Adjusted width for slides and margins */
+}
+
+// Individual slide styling
+.slide {
+    height: 320px; /* Height for the slides */
+    width: 320px; /* Width for the slides */
+    margin-right: 20px; /* Gap between slides */
+    box-sizing: border-box; /* Ensures padding and border do not affect width */
+}
+
+// Carousel face styling
+.carousel__face {
+    background-size: cover;
+    background-position: center;
+    height: 100%; /* Ensure the image covers the container */
+    width: 100%; /* Ensure the image covers the container */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-weight: bold;
+    padding: 10px; /* Adjust if needed */
+}

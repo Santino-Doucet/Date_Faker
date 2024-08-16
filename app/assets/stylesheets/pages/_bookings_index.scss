@@ -57,16 +57,13 @@ img:hover {
 .d-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Consistent gap between items */
   justify-content: center;
 }
 
 .d-flex > div {
   flex: 1 1 250px; /* Flex-grow for responsive design */
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #b3c6f1; /* Light background for contrast */
   border-radius: 10px; /* Rounded corners */
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
 /* Media Queries for Responsiveness */
