@@ -1,9 +1,10 @@
 <%= render 'navbar' %>
 <h1>Créez votre offre</h1>
-<div class="form-container">
+<div class="form-container" id="offers-form">
   <%= simple_form_for @offer do |f| %>
-    <div class="form-inputs">
-      <%= f.input :title, label: "Titre de l'annonce :", autofocus: true %>
+    <div class="form-inputs", style="background-color: #fff; margin: 20px auto;
+      width: 100%; padding: 30px; box-sizing: border-box; border-radius: 10px;">
+      <%= f.input :title, label: "Titre de l'annonce :", autofocus: true%>
       <%= f.input :description, label: 'Décris ton annonce', autofocus: true %>
       <%= f.input :price, label: 'Quel est ton prix par jour ?', autofocus: true %>
       <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Ajoute tes plus belles photos !' %>
