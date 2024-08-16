@@ -87,6 +87,7 @@ height: 80px;
   margin-left: 10px; /* Un petit espace entre les éléments */
 }
 
+
 .navbar-offer .offer-btn {
   padding: 10px 16px;
   background-color: #fef5e6;
@@ -406,4 +407,31 @@ h1 {
 
 .text-content-index {
   max-width: 70%;
+}
+
+
+.underline-p {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #30207c;
+    transition: transform 250ms;
+  }
+
+  &:hover {
+
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+  }
+
 }
