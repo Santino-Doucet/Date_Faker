@@ -167,13 +167,7 @@ height: 80px;
   border-radius: 5px;
   box-shadow: 5px 5px 0px #00000022;
   margin-top: 20px;
-}
-
-.category {
-  background-color: #30207c;
-  color: white;
-  padding: 40px 0;
-}
+  }
 
 .category .title {
   text-align: center;
@@ -203,6 +197,7 @@ height: 80px;
 .offers .second-title {
   text-align: center;
   font-size: 36px;
+  margin-top: 50px;
 }
 
 .offers .d-flex.flex-row {
@@ -331,24 +326,31 @@ h1 {
   background-color: #b3c6f1;
   padding: 20px 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-top: 40px;
   color: #30207c;
 }
 
-.container {
+.cards-collection {
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 8px;
 }
 
 .boxes {
   display: flex;
   justify-content: space-between;
+  gap: 20px; /* Adds space between the cards */
+  width: 100%; /* Makes the collection take up the full width of its parent container */
+  max-width: 1200px; /* Optionally, set a maximum width if you don't want it too wide */
+  margin: 0 auto; /* Center the collection horizontally */
+  padding: 0
 }
 
 .box {
@@ -360,7 +362,8 @@ h1 {
   box-shadow: 4px 4px 4px #30207c;
   overflow: hidden;
   margin: 0;
-  justify-content: space-evenly;
+  flex: 1 1 calc(33.333% - 20px); /* Flex-basis + gap adjustment */
+  max-width: calc(33.333% - 20px); /* Max-width to ensure proper spacing */
 }
 
 .box img {
@@ -369,12 +372,6 @@ h1 {
   display: block;
   margin: 0 auto 10px;
   transition: transform 0.5s ease;
-}
-
-.box p {
-  margin: 0;
-  font-size: 14px;
-  color: #30207c;
 }
 
 .box:hover img {

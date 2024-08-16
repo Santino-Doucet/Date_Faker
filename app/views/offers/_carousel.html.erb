@@ -2,8 +2,8 @@
   <div class="slide-track">
     <% @offers.each do |offer| %>
       <% if offer.photos.any? %> <!-- Ensure the offer has photos -->
-        <%= link_to offer_path(offer), class: 'slide' do %>
-          <div class="slide-title">
+        <%= link_to offer_path(offer), class: 'slide text-decoration-none' do %>
+          <div class="text-center" style="color: #30207C; font-family: Arial, sans-serif; font-size: 22px;">
             <%= offer.title %>
           </div>
           <div class="carousel__face" style="background-image: url('<%= offer.photos.first.url %>');">
