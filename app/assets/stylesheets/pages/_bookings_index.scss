@@ -34,6 +34,12 @@ h3 {
   color: #30207c; /* Consistent with footer and navbar */
   margin-bottom: 20px; /* Space below heading */
 }
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #30207c; /* Consistent with footer and navbar */
+  margin-bottom: 20px; /* Space below heading */
+}
 
 /* Section Heading */
 h4 {
@@ -63,37 +69,37 @@ img:hover {
 /* Flexbox for Layout */
 .d-flex {
   display: flex;
-  
+
   gap: 20px; /* Consistent gap between items */
   justify-content: center;
 }
 
 .d-flex > div { /* Flex-grow for responsive design */
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #fff; /* Light background for contrast */
 
   border-radius: 10px; /* Rounded corners */
 }
 
 .booking-info { /* Flex-grow for responsive design */
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #fff; /* Light background for contrast */
   padding: 10px 48px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
 .booking-info-top { /* Flex-grow for responsive design */
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #fff; /* Light background for contrast */
   padding: 10px;
 }
 
 .form-inputs { /* Flex-grow for responsive design */
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #fff; /* Light background for contrast */
   padding: 10px 48px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
 
 .offer-img {
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #fff; /* Light background for contrast */
   border-radius: 10px; /* Rounded corners */
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -101,7 +107,7 @@ img:hover {
 }
 
 .card-user-offer { /* Flex-grow for responsive design */
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-color: #fff; /* Light background for contrast */
   padding: 10px 48px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);/* Subtle shadow for depth */
 }

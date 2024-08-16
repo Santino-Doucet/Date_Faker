@@ -1,6 +1,6 @@
 <%= render "navbar" %>
 <div class="container justify-content-center">
-  <div class="card-booking-info-left justify-content-center align-items-center bg-light mb-3 p-3">
+  <div class="card-booking-info-left justify-content-center align-items-center mb-3 p-3" style="background-color:#fff">
     <div class="booking-info">
       <h2>Réservation</h2>
       <h3>Envoyez un message avant de réserver votre Date Faker !</h3>
@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="booking-container">
-  <div class="card-booking-info-right d-flex flex-column justify-content-start bg-light mb-3 p-3">
+  <div class="card-booking-info-right d-flex flex-column justify-content-start mb-3 p-3" style="background-color:#fff">
     <section class="booking-info-top d-flex flex-row justify-content-between">
       <section class="offer-img d-flex justify-content-center">
         <%= cl_image_tag @offer.photos.first.key, height: 100, width: 150, crop: :fill, alt: "#{@offer.title} photo" %>

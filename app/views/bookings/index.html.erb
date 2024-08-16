@@ -4,7 +4,7 @@
 <div class="card">
   <details class="dropdown-card" open>
     <summary class="dropdown-title">
-      Les gens ont réservé mes offres
+      Mes demandes
     </summary>
     <div class="section">
       <% if @requests.any? { |request| request.bookings.any? } %>
@@ -28,7 +28,7 @@
 <div class="card">
   <details class="dropdown-card" open>
     <summary class="dropdown-title">
-      Mes reservations
+      Mes réservations
     </summary>
     <div class="section">
       <% if @bookings.any? %>
