@@ -1,27 +1,32 @@
 <%= render "navbar" %>
-<h2 class="mb-3 p-3">Offres publiées</h2>
-<div class="cards-offers d-flex flex-row">
-  <%@user.offers.each do |offer| %>
-  <div class="card-date-offer d-flex mb-3 p-3">
-    <div class="d-flex justify-content-center align-items-center">
-      <%=link_to offer_path(offer) do%>
-        <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, gravity: :auto, crop: :fill, alt: "#{offer.title} photo" %>
-      <% end %>
-      <% if offer.photos.count == 0 %>
-        <%= image_tag "", height: 300, width: 400, crop: "fill", alt: "No photo" %>
-      <% end %>
-      <div class="d-flex flex-column">
-        <h3><%= offer.title %></h3>
-        <p><%= offer.description %></p>
-        <div>
-          <%= link_to "Supprimer",
-            offer_path(offer),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn"%>
-        </div>
-      </div>
+
+<div class="card" style="background-color: #fff; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); margin: 20px auto; padding: 20px; max-width: 90%;">
+  <h2 class="mb-3 p-3" style="font-size: 28px; color: #30207c; text-align: left;">Offres publiées</h2>
+
+  <% if @user.offers.empty? %>
+    <div style="text-align: center; padding: 20px; color: #555;">
+      <h3>Woah c'est vide!</h3>
     </div>
-  </div>
-  <%end %>
+  <% else %>
+    <div class="cards-offers d-flex flex-wrap gap-4" style="justify-content: flex-start;">
+      <% @user.offers.each do |offer| %>
+        <div class="card-date-offer" style="background-color: #f8f8f8; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); padding: 15px; max-width: 350px; text-align: center;">
+          <div style="margin-bottom: 15px;">
+            <%= link_to offer_path(offer) do %>
+              <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, gravity: :auto, crop: :fill, alt: "#{offer.title} photo", style: "border-radius: 10px;" %>
+            <% end %>
+          </div>
+          <div class="offer-details" style="padding: 10px;">
+            <h3 style="font-size: 22px; color: #30207c; margin-bottom: 10px;"><%= offer.title %></h3>
+            <p style="color: #555;"><%= offer.description %></p>
+            <div>
+              <%= link_to "Supprimer", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn", style: "background-color: #ff4d4d; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; font-weight: bold;" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
-<div class="footer"><%= render "footer" %></div>
+<%= render "footer" %>
