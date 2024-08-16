@@ -10,7 +10,6 @@ $animationSpeed: 30s;
 .slider {
     background-color: #b3c6f1;
     border-radius: 10px;
-    background: white;
     height: 320px; /* Adjust to fit the height of the carousel items */
     margin: auto;
     overflow: hidden;
@@ -23,6 +22,7 @@ $animationSpeed: 30s;
 .slide-track {
     animation: scroll $animationSpeed linear infinite;
     display: flex;
+    background-color: #b3c6f1;
     width: calc(320px * 14 + 20px * 13); /* Adjusted width for slides and margins */
 }
 
@@ -31,6 +31,7 @@ $animationSpeed: 30s;
     height: 320px; /* Height for the slides */
     width: 320px; /* Width for the slides */
     margin-right: 20px; /* Gap between slides */
+    background-color:  #b3c6f1;
     box-sizing: border-box; /* Ensures padding and border do not affect width */
 }
 
@@ -43,7 +44,7 @@ $animationSpeed: 30s;
     display: flex;
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
-    color: white;
+    background-color: #b3c6f1;
     text-shadow: 1px 1px 2px black;
     font-weight: bold;
     padding: 10px; /* Adjust if needed */
