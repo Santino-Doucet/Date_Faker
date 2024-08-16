@@ -15,6 +15,60 @@ user = User.create!(
   hair_color: "Blond"
 )
 puts "Done"
+
+puts "Creating Yanis user"
+user = User.new(
+  email: "yanis@gmail.com",
+  password: "123456",
+  first_name: "Yanis",
+  last_name: "Dahmane",
+  gender:  "Homme",
+  age: 23,
+  hair_color: "Blond"
+)
+user.photo.attach(io: File.open('app/assets/images/yanis.png'), filename: 'yanis.png')
+user.save!
+rand(0..3).times do
+  offer = Offer.new(
+    title: Faker::Book.title,
+    description: Faker::GreekPhilosophers.quote,
+    localisation: Faker::Address.city,
+    user_id: user.id,
+    price: rand(1.0...300.0).round(2)
+  )
+  offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
+  offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
+  offer.save!
+end
+puts "Done"
+
+puts "Creating Benjamin user"
+user = User.new(
+  email: "benjamin@gmail.com",
+  password: "123456",
+  first_name: "Benjamin",
+  last_name: "Boisson Dekeyster",
+  gender:  "Homme",
+  age: 21,
+  hair_color: "Blond"
+)
+user.photo.attach(io: File.open('app/assets/images/benji.png'), filename: 'benji.png')
+user.save!
+rand(0..3).times do
+  offer = Offer.new(
+    title: Faker::Book.title,
+    description: Faker::GreekPhilosophers.quote,
+    localisation: Faker::Address.city,
+    user_id: user.id,
+    price: rand(1.0...300.0).round(2)
+  )
+  offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
+  offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
+  offer.save!
+end
+puts "Done"
+
+
 puts "Creating 5 Users with offers and booking"
 5.times do
   user = User.new(
