@@ -48,12 +48,14 @@
 
 <section class="offers">
   <div class="offers-category d-flex flex-column">
+
     <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
     <div class="slider">
       <div class="slide-track">
         <% @offers.each do |offer| %>
           <%= link_to offer_path(offer), class: 'slide' do %>
             <div class="carousel__face"><%=offer.title%></div>
+
           <% end %>
         <% end %>
       </div>

@@ -9,15 +9,13 @@
     <div class="section">
       <% if @offers.any? { |o| o.bookings.any? } %>
         <div class="d-flex justify-content-start gap-3">
-          <% @offers.each do |o| %>
-          <% o.bookings.each do |b| %>
+        <% @requests.each do |booking| %>
             <div>
-              <%= cl_image_tag b.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
-              <p><strong>Nom: </strong><%= b.offer.user.first_name %> <%= b.offer.user.last_name %><br>
-                <%= b.message %><br><strong>Date: </strong><%= b.booked_on %>
+              <%= cl_image_tag booking.offer.photos.first.key, height: 200, width: 300, crop: :fill  %>
+              <p><strong>Nom: </strong><%= booking.offer.user.first_name %> <%= booking.offer.user.last_name %><br>
+                <%= booking.message %><br><strong>Date: </strong><%= booking.booked_on %>
               </p>
             </div>
-          <% end %>
           <% end %>
         </div>
       <% else %>
@@ -46,6 +44,7 @@
         </div>
       <% else %>
         <h3>Woah c'est vide!</h3>
+
       <% end %>
     </div>
   </details>
