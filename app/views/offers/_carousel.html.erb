@@ -1,0 +1,15 @@
+<div class="slider">
+  <div class="slide-track">
+    <% @offers.each do |offer| %>
+      <% if offer.photos.any? %> <!-- Ensure the offer has photos -->
+        <%= link_to offer_path(offer), class: 'slide' do %>
+          <div class="slide-title">
+            <%= offer.title %>
+          </div>
+          <div class="carousel__face" style="background-image: url('<%= offer.photos.first.url %>');">
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

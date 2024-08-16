@@ -107,13 +107,10 @@ height: 80px;
   align-items: center;
   padding: 48px;
   background-color: #fef5e6;
+  margin-right: 80px;
 }
 
-.text-content {
-  max-width: 50%;
-}
-
-.text-content h1 {
+.text-content-index h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -122,7 +119,7 @@ height: 80px;
   margin-bottom: 10px;
 }
 
-.text-content .description {
+.text-content-index .description {
   text-overflow: ellipsis;
   line-height: 1.5em;
   max-height: 3em;
@@ -141,9 +138,12 @@ height: 80px;
   margin-top: 20px;
 }
 
-h1 {
-  font-size: 48px;
+.index-title {
+  font-size: 28px;
   color: #000000;
+  font-weight: 700;
+  margin-left: 18px;
+  text-align: start;
 }
 
 .highlight {
@@ -153,6 +153,7 @@ h1 {
 .description {
   font-size: 18px;
   color: #555;
+  margin-top: 20px;
   margin: 20px 0;
 }
 
@@ -261,6 +262,11 @@ h1 {
   position: relative;
   max-width: 50%;
 }
+
+.image-index {
+  padding-right: 120px;
+}
+
 .left-character, .right-character {
   width: 45%;
   position: absolute;
@@ -341,6 +347,7 @@ h1 {
 
 .boxes {
   display: flex;
+  justify-content: space-between;
 }
 
 .box {
@@ -375,53 +382,30 @@ h1 {
 
 .step-box {
   background-color: #b3c6f1;
+  display: flex;               /* Enable flexbox layout */
+  flex-direction: column;      /* Stack children vertically */
+  justify-content: center;     /* Center content vertically */
+  align-items: center;         /* Center content horizontally */
+  height: 150px;               /* Set a fixed height for the step box */
+  padding: 20px;               /* Optional: Add padding for spacing */
+  border-radius: 8px;          /* Optional: Add rounded corners */
+}
+
+.step-box .index-box-item {
+  text-align: center;          /* Center text within the h2 */
+  margin: 0;                   /* Remove default margin */
+  font-size: 1.5rem;           /* Adjust font size if necessary */
+  padding-bottom: 0;
 }
 
 @mixin white-gradient {
 	background: #fef5e6;
 }
-$animationSpeed: 30s;
-// Animation
-@keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
-}
-// Styling
-.slider {
-	background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 100px;
-	margin: auto;
-	overflow:hidden;
-	position: relative;
-	width: 100%;
-
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
-	&::before {
-		left: 0;
-		top: 0;
-	}
-
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(250px * 14);
-	}
-
-	.slide {
-		height: 100px;
-		width: 250px;
-	}
-}
-
-.slide-track{
-  background-color: #b3c6f1;
-}
 
 .description {
   margin: 16px;
+}
+
+.text-content-index {
+  max-width: 70%;
 }

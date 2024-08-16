@@ -1,10 +1,10 @@
 <%= render "navbar" %>
 
     <section class="real-connections-section">
-    <div class="text-content">
-      <h1>Trouve ton <span class="highlight">fake date </span>pour tous les événements en 1 click</h1>
-      <p class="description"> Vous craignez les questions gênantes en famille ou de venir seul à un mariage, dîner d'affaires, ou autre ? Pas de souci ! Avec DateFaker, évitez l'embarras grâce à un compagnon fictif, quelle que soit l'occasion.
-    </p>
+    <div class="text-content-index">
+      <h1 class="index-title"><span data-controller="typed" data-typed-strings-value="<%= ["Trouve ton <span class='highlight'>fake date </span>pour tous les événements en 1 click"] %>" class="index-title">
+      </span></h1>
+      <p class="description"> Vous craignez les questions gênantes en famille ou de venir seul à un mariage, dîner d'affaires, ou autre?<br> Pas de souci ! Avec DateFaker, évitez l'embarras grâce à un compagnon fictif, quelle que soit l'occasion.</p>
     </div>
     <div class="image-content">
       <%= image_tag "img2", alt: "img_2", width: "auto", height: "300" %>
@@ -48,18 +48,8 @@
 
 <section class="offers">
   <div class="offers-category d-flex flex-column">
-
     <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
-    <div class="slider">
-      <div class="slide-track">
-        <% @offers.each do |offer| %>
-          <%= link_to offer_path(offer), class: 'slide' do %>
-            <div class="carousel__face"><%=offer.title%></div>
-
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+      <%= render 'carousel' %>
   </div>
 </section>
 
@@ -77,30 +67,30 @@
 
   <section class="app-works-section work_section">
     <div class="content-container">
-      <h1>Comment ça <span class="highlight">marche?</span></h1>
+      <h1 class="index-title">Comment ça <span class="highlight">marche?</span></h1>
         <p class="description"> DateFaker s'engage à vous aider dans les situations sociales délicates en vous connectant avec des experts prêts à jouer le rôle parfait pour vous.      </p>
 
       <div class="steps-container">
         <div class="step-box">
           <div class="step-number">1</div>
-            <h2>Inscrivez-vous</h2>
+            <h2 class="index-box-item">Inscrivez-vous</h2>
         </div>
           <div class="step-box">
             <div class="step-number">2</div>
-              <h2>Lancer la recherche</h2>
+              <h2 class="index-box-item">Lancer la recherche</h2>
         </div>
           <div class="step-box">
             <div class="step-number">3</div>
-              <h2>Postuler un offre</h2>
+              <h2 class="index-box-item">Postuler un offre</h2>
         </div>
           <div class="step-box">
             <div class="step-number">4</div>
-            <h2>Réserver votre date</h2>
+            <h2 class="index-box-item">Réserver votre date</h2>
         </div>
       </div>
     </div>
 
-    <div class="image-container">
+    <div class="image-container image-index">
       <%= image_tag "service", alt: "service", width: "auto", height: "250" %>
     </div>
   </section>
