@@ -24,6 +24,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @user = @offer.user
   end
 
   def destroy
