@@ -7,7 +7,7 @@
       Les gens ont réservé mes offres
     </summary>
     <div class="section">
-      <% if @offers.any? { |o| o.bookings.any? } %>
+      <% if @requests.any? { |request| request.bookings.any? } %>
         <div class="d-flex justify-content-start gap-3">
         <% @requests.each do |booking| %>
             <div>
