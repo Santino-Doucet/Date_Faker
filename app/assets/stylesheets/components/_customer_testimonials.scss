@@ -11,9 +11,10 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
-  background-color: #ffffff;
+  padding: 72px;
+  background-color:white;
 }
+
 
 /* Text content styling */
 .testimonial-content {
@@ -21,7 +22,7 @@ body {
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 28px;
   color: #000000;
   font-weight: bold;
   padding-bottom: 48px;
@@ -42,7 +43,7 @@ h2 {
 }
 
 .testimonial-quote {
-  font-size: 24px;
+  font-size: 20px;
   color: #333333;
   line-height: 1.5;
   margin-bottom: 20px;
