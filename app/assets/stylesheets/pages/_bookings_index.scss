@@ -1,0 +1,195 @@
+/* Body Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Modern and clean font */
+  background-color: #fef5e6; /* Light background for contrast */
+  color: #333; /* Darker text for readability */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+p {
+  font-family: 'Roboto', sans-serif; /* Use a modern, clean font */
+  font-size: 16px; /* Base font size for readability */
+  line-height: 1.6; /* Improves readability by increasing line spacing */
+  color: #333; /* Dark grey text color for contrast */
+  margin-bottom: 15px; /* Space below each paragraph */
+  text-align: justify; /* Justify the text for a clean edge */
+}
+
+/* Card Styles */
+.card {
+  background-color: white; /* Clean white background */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px auto; /* Center align and space between cards */
+  padding: 20px;
+  max-width: 90%; /* Limit the width of cards */
+}
+
+/* Section Heading */
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #30207c; /* Consistent with footer and navbar */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+/* Image Styling */
+img {
+  border-radius: 5px; /* Rounded corners for images */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Content Styling */
+.section p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #555; /* Subtle text color */
+}
+
+/* Flexbox for Layout */
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Consistent gap between items */
+  justify-content: center;
+}
+
+.d-flex > div {
+  flex: 1 1 250px; /* Flex-grow for responsive design */
+  background-color: #f8f8f8; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .d-flex {
+    justify-content: center;
+  }
+
+  img {
+    width: 100%; /* Make images responsive */
+  }
+}
+
+/* Dropdown Title Styles */
+.dropdown-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #30207c; /* Consistent with other headings */
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fef5e6; /* Matches background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown-title:hover {
+  background-color: #f8f8f8; /* Slightly darker on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide the border and arrow icon in summary */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .dropdown-title {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow when open */
+}
+
+/* Styles for the hidden content when closed */
+details > .card {
+  padding-top: 0; /* To remove padding between title and content */
+}
+
+details[open] > .card {
+  margin-top: 15px; /* Add spacing once opened */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .dropdown-title {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .card {
+    margin-top: 10px;
+  }
+}
+
+/* Dropdown Card Styles */
+.dropdown-card {
+  position: relative;
+}
+
+.dropdown-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #30207c; /* Consistent with other headings */
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: white; /* Same as card background */
+  border-radius: 15px; /* Align with card's border radius */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  list-style: none; /* Remove default marker */
+  display: flex;
+  justify-content: space-between; /* Space between title and arrow */
+  align-items: center; /* Vertically center the arrow */
+}
+
+.dropdown-title::after {
+  content: '▼'; /* Default arrow */
+  font-size: 14px;
+  color: #30207c;
+  transition: transform 0.3s ease;
+  margin-left: 10px; /* Space between title and arrow */
+}
+
+.dropdown-card[open] .dropdown-title::after {
+  transform: rotate(-180deg); /* Rotate the arrow when open */
+}
+
+.dropdown-title:hover {
+  background-color: #f8f8f8; /* Slightly darker on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide the border and arrow icon in summary */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Styles for the hidden content when closed */
+details > .section {
+  padding-top: 0; /* To remove padding between title and content */
+}
+
+details[open] > .section {
+  margin-top: 15px; /* Add spacing once opened */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .dropdown-title {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .card {
+    margin-top: 10px;
+  }
+}
