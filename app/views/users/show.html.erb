@@ -10,7 +10,7 @@
   <% else %>
     <div class="cards-offers d-flex flex-wrap gap-4" style="justify-content: flex-start;">
       <% @user.offers.each do |offer| %>
-        <div class="card-date-offer" style="background-color: #f8f8f8; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); padding: 15px; max-width: 350px; text-align: center;">
+        <div class="card-date-offer" style="position: relative; background-color: #f8f8f8; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); padding: 15px 15px 60px 15px; max-width: 350px; text-align: center;">
           <div style="margin-bottom: 15px;">
             <%= link_to offer_path(offer) do %>
               <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, gravity: :auto, crop: :fill, alt: "#{offer.title} photo", style: "border-radius: 10px;" %>
@@ -19,9 +19,7 @@
           <div class="offer-details" style="padding: 10px;">
             <h3 style="font-size: 22px; color: #30207c; margin-bottom: 10px;"><%= offer.title %></h3>
             <p style="color: #555;"><%= offer.description %></p>
-            <div>
               <%= link_to "Supprimer", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-btn", style: "background-color: #ff4d4d; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; font-weight: bold;" %>
-            </div>
           </div>
 
         </div>
