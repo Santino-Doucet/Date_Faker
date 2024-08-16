@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @offers = Offer.all
+    @offers = Offer.with_attached_photos.all
   end
 
   def new
@@ -22,7 +22,7 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.find(params[:id])
+    @offer = Offer.with_attached_photos.find(params[:id])
     @user = @offer.user
   end
 

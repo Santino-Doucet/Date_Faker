@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
+  has_many :requests, through: :offers, source: :bookings
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :gender, presence: true

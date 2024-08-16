@@ -1,14 +1,11 @@
 <%= render "navbar" %>
 <h2 class="mb-3 p-3">Offres publiées</h2>
 <div class="cards-offers d-flex flex-row">
-  <%@user.offers.each do |offer| %>
+  <% @offers.each do |offer| %>
   <div class="card-date-offer d-flex mb-3 p-3">
     <div class="d-flex justify-content-center align-items-center">
       <%=link_to offer_path(offer) do%>
         <%= cl_image_tag offer.photos.first.key, height: 200, width: 300, gravity: :auto, crop: :fill, alt: "#{offer.title} photo" %>
-      <% end %>
-      <% if offer.photos.count == 0 %>
-        <%= image_tag "", height: 300, width: 400, crop: "fill", alt: "No photo" %>
       <% end %>
       <div class="d-flex flex-column">
         <h3><%= offer.title %></h3>

@@ -57,7 +57,7 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
       <% @offers.each do |offer|%>
         <%= link_to offer_path(offer) do %>
           <%= cl_image_tag offer.photos.first.key, width: 100, height: 120, crop: :fill, alt: "#{offer.title} photo" %>
-          <% if offer.photos.count == 0 %>
+          <% if offer.photos.size == 0 %>
             <%= image_tag "", height: 300, width: 400, crop: :fill, alt: "No photo" %>
           <% end %>
           <p><%= offer.description %></p>
