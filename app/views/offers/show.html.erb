@@ -1,10 +1,10 @@
 <%= render "navbar" %>
 <main>
-  <h1><strong><%= @offer.title %></strong></h1>
+  <h1 style="text-align: start; margin-left: 2.5em"><strong><%= @offer.title %></strong></h1>
   <div class="card">
     <div class="profile">
       <div class="photo-gallery">
-        <div class="profile-image main-image" style="background-image: url('<%= @offer.photos.first.url %>')">
+        <div class="profile-image main-image" style="background-image: url('<%= @offer.photos.first.url %>'); border-radius: 5px">
         </div>
         <div class="secondary-images">
           <% @offer.photos.each do |photo| %>
@@ -20,22 +20,27 @@
   </div>
 
   <div class="card">
-    <section class="details">
+    <section class="details" style="border-radius: 5px; background-color: #ffffff">
       <div class="location">
-        <div class="user-icon">JL</div>
+        <div style="margin-right:24px">
+          <% if !@user.photo.key.nil? %>
+            <%= cl_image_tag @user.photo.key, crop: :fill, alt: "#{@user.first_name} photo", class: "avatar" %>
+          <% else %>
+            <h4 class="avatar-round"><%= @user.first_name.chars[0] %><%= @user.last_name.chars[0] %> </h4>
+          <% end %>
+        </div>
         <div class="user-details">
-          <p>Nom: <%= @user.first_name %> <%= @user.last_name %></p>
-          <p>Age: <%= @user.age %></p>
-          <p>Gender: <%= @user.gender %></p>
-          <p>Prix: <%= @offer.price %> €</p>
-          <p>Description: <br><%= @offer.description %></p>
-          <p>Mobilité: <%= @offer.localisation %></p>
-          <p>Disponibilités </p>
+          <p> <strong>Nom:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
+          <p> <strong>Age:</strong> <%= @user.age %></p>
+          <p> <strong>Genre:</strong> <%= @user.gender %></p>
+          <p> <strong>Prix:</strong> <%= @offer.price %> €</p>
+          <p> <strong>Description:</strong> <%= @offer.description %></p>
+          <p> <strong>Localisation:</strong> <%= @offer.localisation %></p>
         </div>
       </div>
-      <div class="btn">
-        <%= link_to "Booker", new_offer_booking_path(@offer)%>
-      </div>
+      <% if current_user != @user %>
+        <%= link_to "Reserver", new_offer_booking_path(@offer), class: "btn"%>
+      <% end %>
     </section>
   </div>
 </main>
