@@ -4,7 +4,7 @@
   <div class="card">
     <div class="profile">
       <div class="photo-gallery">
-        <div class="profile-image main-image" style="background-image: url('<%= @offer.photos.first.url %>')">
+        <div class="profile-image main-image" style="background-image: url('<%= @offer.photos.first.url %>'); border-radius: 5px">
         </div>
         <div class="secondary-images">
           <% @offer.photos.each do |photo| %>
