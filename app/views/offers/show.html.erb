@@ -1,6 +1,6 @@
 <%= render "navbar" %>
 <main>
-  <h1><strong><%= @offer.title %></strong></h1>
+  <h1 style="text-align: start; margin-left: 2.5em"><strong><%= @offer.title %></strong></h1>
   <div class="card">
     <div class="profile">
       <div class="photo-gallery">
@@ -20,22 +20,20 @@
   </div>
 
   <div class="card">
-    <section class="details" style="border-radius: 5px">
+    <section class="details" style="border-radius: 5px; background-color: #ffffff">
       <div class="location">
         <div class="user-icon">JL</div>
         <div class="user-details">
           <p> <strong>Nom:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
           <p> <strong>Age:</strong> <%= @user.age %></p>
-          <p> <strong>Gender:</strong> <%= @user.gender %></p>
+          <p> <strong>Genre:</strong> <%= @user.gender %></p>
           <p> <strong>Prix:</strong> <%= @offer.price %> €</p>
           <p> <strong>Description:</strong> <%= @offer.description %></p>
           <p> <strong>Localisation:</strong> <%= @offer.localisation %></p>
         </div>
       </div>
       <% if current_user != @user %>
-      <div class="btn">
-        <%= link_to "Booker", new_offer_booking_path(@offer)%>
-      </div>
+        <%= link_to "Reserver", new_offer_booking_path(@offer), class: "btn"%>
       <% end %>
     </section>
   </div>
