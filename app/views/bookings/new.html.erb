@@ -1,6 +1,6 @@
 <%= render "navbar" %>
-<div class="container d-flex flex-row justify-content-center mb-3 p-3">
-  <div class="card-booking-info-left justify-content-center align-items-center mb-3 p-3">
+<div class="container justify-content-center">
+  <div class="card-booking-info-left justify-content-center align-items-center bg-light mb-3 p-3">
     <div class="booking-info">
       <h2>Réservation</h2>
       <h3>Envoyez un message avant de réserver votre Date Faker !</h3>
@@ -8,7 +8,21 @@
     </div>
     <div class="card-user-offer">
       <div class="card-user-offer-title">
-
+        <div class="avatar-name d-flex align-items-center justify-content-start">
+          <% if !@user.photo.key.nil? %>
+            <%= cl_image_tag @user.photo.key, crop: :fill, alt: "#{@user.first_name} photo", class: "avatar" %>
+          <% else %>
+            <h4 class="avatar-round"><%= @user.first_name.chars[0] %><%= @user.last_name.chars[0] %> </h4>
+          <% end %>
+          <h3 id="name_avatar"><%= @user.first_name %> <%= @user.last_name %></h3>
+        </div>
+        <p>Age : <%= @user.age %></p>
+        <p>Genre : <%= @user.gender %></p>
+        <% if !@user.hair_color=="" %>
+          <p>Couleur de cheveux : <%= @user.hair_color %></p>
+        <% else %>
+          <p>Couleur de cheveux : Non renseigné</p>
+        <% end %>
       </div>
     </div>
     <div class="message-booking">
@@ -27,43 +41,44 @@
 <% end %>
     </div>
   </div>
-
-  <div class="card-booking-info-right d-flex flex-column justify-content-center bg-light mb-3 p-3">
-    <div class="booking-info-top d-flex flex-row justify-content-between">
-      <div class="offer-img">
+  <div class="booking-container">
+  <div class="card-booking-info-right d-flex flex-column justify-content-start bg-light mb-3 p-3">
+    <section class="booking-info-top d-flex flex-row justify-content-between">
+      <section class="offer-img d-flex justify-content-center">
         <%= cl_image_tag @offer.photos.first.key, height: 100, width: 150, crop: :fill, alt: "#{@offer.title} photo" %>
           <% if @offer.photos.count == 0 %>
             <%= image_tag "", height: 100, width: 150, crop: :fill, alt: "No photo" %>
           <% end %>
-      </div>
-      <div class="offer-info">
+      </section>
+      <div class="offer-info d-flex flex-column justify-content-center">
         <h3><%= @offer.title %></h3>
         <p><%= @offer.description%></p>
       </div>
-    </div>
+    </section>
     <div class="price-title">
       <h3>Détails du prix</h3>
-    </div>
     <div class="booking-info-bottom d-flex flex-row justify-content-between">
-      <div class="price-recap-left">
+      <section id="price-recap-left">
         <div class="price-summary mb-5">
           <p><%= @offer.price %>€ x 1 jour</p>
-          <p>Frais de service</p>
+          <p>Frais de service (2%)</p>
         </div>
         <div class="price-total">
           <p><strong>Total</strong></p>
         </div>
-      </div>
-        <div class="price-recap-right">
-        <div class="price-summary mb-5">
-            <% frais = 5.99 %>
+      </section>
+        <section id="price-recap-right">
+          <div class="price-summary mb-5">
+            <% frais = (@offer.price*0.02).round(2)  %>
             <p><%= @offer.price %>€</p>
-            <p><%= frais %>€</p>
+            <p><%= frais%>€</p>
           </div>
           <div class="price-total">
-            <p><strong><%= @offer.price + frais %>€</strong></p>
+            <p><strong><%= (@offer.price + frais).round(2) %>€</strong></p>
           </div>
       </div>
+    </div>
+    </div>
     </div>
   </div>
 </div>
