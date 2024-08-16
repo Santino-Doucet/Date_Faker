@@ -43,12 +43,13 @@ h1 {
 }
 
 .step-box {
-  background-color: #e0f7fa; /* Light cyan */
+  background-color: #e0e7f7; /* Light cyan */
   padding: 20px;
   margin: 8px;
   border-radius: 10px;
   box-shadow: 10px 10px 0px #00000022; /* Adding shadow */
   position: relative;
+  transition: transform 0.5s ease;
 }
 
 .step-box h2 {
@@ -80,11 +81,11 @@ h1 {
 }
 
 .steps-container .step-box:nth-child(3) {
-  background-color: greens; /* Light green */
+  background-color:#e0e7f7; /* Light green */
 }
 
 .steps-container .step-box:nth-child(4) {
-  background-color: #f4e4fa; /* Light purple */
+  background-color:#e0e7f7 ; /* Light purple */
 }
 
 /* Image container */
