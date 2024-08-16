@@ -3,14 +3,16 @@
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fcf1c3; /* Light yellow background */
+  background-color:FEF5E6; /* Light yellow background */
 }
 
 .app-works-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 48px  ;
+  padding-bottom: 32px;
+  padding-left: 32px;
+  margin :32px;
 }
 
 /* Content container */
@@ -64,7 +66,7 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #00acc1;
+  background-color:#f298a8;
   padding: 10px;
   border-radius: 50%;
   width: 40px;
@@ -78,7 +80,7 @@ h1 {
 }
 
 .steps-container .step-box:nth-child(3) {
-  background-color: #e0f4e7; /* Light green */
+  background-color: greens; /* Light green */
 }
 
 .steps-container .step-box:nth-child(4) {

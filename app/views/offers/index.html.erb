@@ -3,12 +3,11 @@
     <section class="real-connections-section">
     <div class="text-content">
       <h1>Trouve ton <span class="highlight">fake date </span>pour tous les événements en 1 click</h1>
-      <p class="description">
-Vous craignez les questions gênantes en famille ou de venir seul à un mariage, dîner d'affaires, ou autre ? Pas de souci ! Avec DateFaker, évitez l'embarras grâce à un compagnon fictif, quelle que soit l'occasion.
+      <p class="description"> Vous craignez les questions gênantes en famille ou de venir seul à un mariage, dîner d'affaires, ou autre ? Pas de souci ! Avec DateFaker, évitez l'embarras grâce à un compagnon fictif, quelle que soit l'occasion.
     </p>
     </div>
     <div class="image-content">
-      <%= image_tag "img2", alt: "img_2", width: "auto", height: "400" %>
+      <%= image_tag "img2", alt: "img_2", width: "auto", height: "300" %>
       <div class="heart-icon">
         <img src="path-to-your-image/heart-icon.png" alt="">
       </div>
@@ -18,51 +17,48 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
 <section class="category">
   <div class="container d-flex flex-column" >
     <h2 class="title">Trouvez le complice pour chaque occasion</h2>
-    <div class="boxes">
-  <div class="box">
-    <%= image_tag "mariage", alt: "mariage", width: "auto", height: "120" %>
-      <p>Mariage</p>
+      <div class="boxes">
+        <div class="box">
+        <%= image_tag "mariage", alt: "mariage", width: "auto", height: "120" %>
+          <p>Mariage</p>
+    </div>
+      <div class="box">
+        <%= image_tag "meal", alt: "meal", width: "auto", height: "120" %>
+          <p>Repas de famille</p>
+      </div>
+        <div class="box">
+          <%= image_tag "business", alt: "business", width: "auto", height: "120" %>
+            <p>Dîner d'affaires</p>
+      </div>
+        <div class="box">
+          <%= image_tag "hug", alt: "hug", width: "auto", height: "120" %>
+            <p>Consolation après une rupture</p>
+        </div>
+          <div class="box">
+            <%= image_tag "sad", alt: "sad", width: "auto", height: "120" %>
+              <p>Support lors d'une situation stressante</p>
+        </div>
+          <div class="box">
+            <%= image_tag "interrogation", alt: "interrogation", width: "auto", height: "120" %>
+              <p>Autres</p>
+          </div>
+        </div>
   </div>
-    <div class="box">
-      <%= image_tag "meal", alt: "meal", width: "auto", height: "120" %>
-      <p>Repas de famille</p>
-  </div>
-  <div class="box">
-    <%= image_tag "business", alt: "business", width: "auto", height: "120" %>
-    <p>Dîner d'affaires</p>
-  </div>
-  <div class="box">
-  <%= image_tag "hug", alt: "hug", width: "auto", height: "120" %>
-    <p>Consolation après une rupture</p>
-  </div>
-  <div class="box">
-    <%= image_tag "sad", alt: "sad", width: "auto", height: "120" %>
-    <p>Support lors d'une situation stressante</p>
-  </div>
-  <div class="box">
-    <%= image_tag "interrogation", alt: "interrogation", width: "auto", height: "120" %>
-    <p>Autres</p>
-  </div>
-  </div>
-</div>
-
 </section>
 
 <section class="offers">
   <div class="offers-category d-flex flex-column">
-    <div>
-      <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
-    </div>
-    <div class="d-flex flex-row">
-      <% @offers.each do |offer|%>
-        <%= link_to offer_path(offer) do %>
-          <%= cl_image_tag offer.photos.first.key, width: 100, height: 120, crop: :fill, alt: "#{offer.title} photo" %>
-          <% if offer.photos.size == 0 %>
-            <%= image_tag "", height: 300, width: 400, crop: :fill, alt: "No photo" %>
+
+    <h2 class="second-title">Découvrez Nos Experts : Prêts à rendre votre moment inoubliable !</h2>
+    <div class="slider">
+      <div class="slide-track">
+        <% @offers.each do |offer| %>
+          <%= link_to offer_path(offer), class: 'slide' do %>
+            <div class="carousel__face"><%=offer.title%></div>
+
           <% end %>
-          <p><%= offer.description %></p>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </section>
@@ -70,10 +66,8 @@ Vous craignez les questions gênantes en famille ou de venir seul à un mariage,
   <section class="testimonial-section">
     <div class="testimonial-content">
       <h2>Ce que pense <span class="highlight">nos utilisateurs</span></h2>
-      <p class="testimonial-quote">
-J’ai utilisé DateFaker pour un mariage où je ne voulais pas aller seul, et c’était parfait ! Mon 'faux' compagnon était charmant et a su jouer son rôle à la perfection. Aucune question gênante, et j’ai passé une super soirée sans le moindre stress. Je recommande vivement !      </p>
+      <p class="testimonial-quote"> J’ai utilisé DateFaker pour un mariage où je ne voulais pas aller seul, et c’était parfait ! Mon 'faux' compagnon était charmant et a su jouer son rôle à la perfection. Aucune question gênante, et j’ai passé une super soirée sans le moindre stress. Je recommande vivement !      </p>
       <p class="testimonial-author">Helena Ann</p>
-      <div class="quote-icon">“</div>
     </div>
 
     <div class="image-container">
@@ -84,31 +78,30 @@ J’ai utilisé DateFaker pour un mariage où je ne voulais pas aller seul, et c
   <section class="app-works-section work_section">
     <div class="content-container">
       <h1>Comment ça <span class="highlight">marche?</span></h1>
-      <p class="description">
-DateFaker s'engage à vous aider dans les situations sociales délicates en vous connectant avec des experts prêts à jouer le rôle parfait pour vous.      </p>
+        <p class="description"> DateFaker s'engage à vous aider dans les situations sociales délicates en vous connectant avec des experts prêts à jouer le rôle parfait pour vous.      </p>
 
       <div class="steps-container">
         <div class="step-box">
           <div class="step-number">1</div>
-          <h2>Inscrivez-vous</h2>
+            <h2>Inscrivez-vous</h2>
         </div>
-        <div class="step-box">
-          <div class="step-number">2</div>
-          <h2>Lancer la recherche</h2>
+          <div class="step-box">
+            <div class="step-number">2</div>
+              <h2>Lancer la recherche</h2>
         </div>
-        <div class="step-box">
-          <div class="step-number">3</div>
-          <h2>Postuler un offre</h2>
+          <div class="step-box">
+            <div class="step-number">3</div>
+              <h2>Postuler un offre</h2>
         </div>
-        <div class="step-box">
-          <div class="step-number">4</div>
-          <h2>Résever votre date</h2>
+          <div class="step-box">
+            <div class="step-number">4</div>
+            <h2>Réserver votre date</h2>
         </div>
       </div>
     </div>
 
     <div class="image-container">
-      <%= image_tag "phone", alt: "phone"%>
+      <%= image_tag "service", alt: "service", width: "auto", height: "250" %>
     </div>
   </section>
 
@@ -118,7 +111,7 @@ DateFaker s'engage à vous aider dans les situations sociales délicates en vous
             <div class="container">
                 <div class="row">
                       <div class="col-sm-6 col-md-3 item">
-                        <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "120" %>
+                        <%= image_tag "logo", alt: "logo_date_faker", width: "auto", height: "100" %>
                       </div>
                     <div class="col-sm-6 col-md-3 item">
                       <ul>

@@ -8,9 +8,10 @@ body {
 
 .testimonial-section {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
+  padding: 16px;
   background-color: #ffffff;
 }
 
@@ -23,6 +24,7 @@ h2 {
   font-size: 36px;
   color: #000000;
   font-weight: bold;
+  padding-bottom: 48px;
 }
 
 .highlight {
