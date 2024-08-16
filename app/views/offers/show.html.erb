@@ -22,7 +22,13 @@
   <div class="card">
     <section class="details" style="border-radius: 5px; background-color: #ffffff">
       <div class="location">
-        <div class="user-icon">JL</div>
+        <div style="margin-right:24px">
+          <% if !@user.photo.key.nil? %>
+            <%= cl_image_tag @user.photo.key, crop: :fill, alt: "#{@user.first_name} photo", class: "avatar" %>
+          <% else %>
+            <h4 class="avatar-round"><%= @user.first_name.chars[0] %><%= @user.last_name.chars[0] %> </h4>
+          <% end %>
+        </div>
         <div class="user-details">
           <p> <strong>Nom:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
           <p> <strong>Age:</strong> <%= @user.age %></p>
