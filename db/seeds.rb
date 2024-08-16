@@ -36,8 +36,9 @@ rand(0..3).times do
     user_id: user.id,
     price: rand(1.0...300.0).round(2)
   )
-  offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
-  offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
+  rand(1..5).times do
+    offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
+  end
   offer.save!
 end
 puts "Done"
@@ -62,8 +63,9 @@ rand(0..3).times do
     user_id: user.id,
     price: rand(1.0...300.0).round(2)
   )
-  offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
-  offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
+  rand(1..5).times do
+    offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
+  end
   offer.save!
 end
 puts "Done"
@@ -89,8 +91,9 @@ puts "Creating 5 Users with offers and booking"
       user_id: user.id,
       price: rand(1.0...300.0).round(2)
     )
-    offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
-    offer.photos.attach(io: File.open('app/assets/images/Mariage_2.jpeg'), filename: 'Mariage_2.jpeg')
+    rand(1..5).times do
+      offer.photos.attach(io: File.open('app/assets/images/Mariage_1.jpeg'), filename: 'Mariage_1.jpeg')
+    end
     offer.save!
     rand(0..1).times do
       ids = User.ids
